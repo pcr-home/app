@@ -21,7 +21,7 @@ const Index = (
         <Stack
           key="articlesList"
           title="Articles List"
-          icon={() => <Icon name="list" {...DefaultProps.icons} />}
+          icon={() => <Icon name="home" {...DefaultProps.icons} />}
           {...DefaultProps.navbarProps}
         >
           <Scene key="articlesList" component={ArticlesList} />
@@ -31,7 +31,7 @@ const Index = (
         <Stack
           key="home"
           title={AppConfig.appName}
-          icon={() => <Icon name="planet" {...DefaultProps.icons} />}
+          icon={() => <Icon name="ios-add-circle-outline" {...DefaultProps.middle_icon} />}
           {...DefaultProps.navbarProps}
         >
           <Scene key="home" component={AboutComponent} />
@@ -40,7 +40,7 @@ const Index = (
         <Stack
           key="form"
           title="Articles Form"
-          icon={() => <Icon name="contact" {...DefaultProps.icons} />}
+          icon={() => <Icon name="information-circle-outline" {...DefaultProps.icons} />}
           {...DefaultProps.navbarProps}
         >
           <Scene key="form" component={ArticlesForm} />
