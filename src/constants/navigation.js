@@ -19,6 +19,10 @@ export default {
   },
 
   icons: {
-    style: { color: 'white', height: 30, width: 30 },
+    style: { color: 'black', height: 30, width: 30 },
   },
+
+  middle_icon: {
+    style: { color: 'black', height: 51, width: 51, fontSize: 54 },
+  }
 };
