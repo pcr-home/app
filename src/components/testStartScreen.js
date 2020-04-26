@@ -6,22 +6,6 @@ import Spacer from './UI/Spacer';
 import { View, Image, StyleSheet, Button, TouchableOpacity, onPress, Alert } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 
-/*
-() => fetch('http://0.0.0.0:5000/', {
-          'method': 'GET',
-          'headers': {
-            Accept: 'appliation/json',
-            'Content-Type': 'application/json',
-          },
-        }).then(response => {
-          this.setState({
-            ml_response: 'response.text'
-          })
-        })
-
-*/
-
-
 class testStartScreen extends Component{
 
   constructor(props){
@@ -49,7 +33,17 @@ render() {
         <TouchableOpacity
         style={[styles.baseText, styles.buttonText]}
         onPress={() => {
+          Alert.alert('Response received!')
+          fetch('http://0.0.0.0:5000/api', {
+          'method': 'GET',
+          'headers': {
+            Accept: 'appliation/json',
+            'Content-Type': 'application/json',
+          },
+        }).then(response => {
+          Alert.alert('Application run successfully!')
           Actions.testResultsScreen();
+        })
         }}
       >
         <Text style={styles.baseText}>SEQUENCE</Text>
