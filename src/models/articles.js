@@ -8,6 +8,10 @@ import { ucfirst, stripHtml } from '../lib/string';
 import { errorMessages, successMessages } from '../constants/messages';
 import pagination from '../lib/pagination';
 
+
+import firebase from 'firebase';
+import 'firebase/firestore';
+
 /**
  * Transform the endpoint data structure into our redux store format
  * @param {obj} item
@@ -46,9 +50,9 @@ export default {
       const { lastSync = {}, meta = {} } = articles;
       const { lastPage } = meta;
 
-      // Only sync when it's been 5mins since last sync
+      // Only sync when it's been 60mins since last sync
       if (lastSync[page]) {
-        if (!forceSync && moment().isBefore(moment(lastSync[page]).add(5, 'minutes'))) {
+        if (!forceSync && moment().isBefore(moment(lastSync[page]).add(60, 'minutes'))) {
           return true;
         }
       }

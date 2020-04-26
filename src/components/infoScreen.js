@@ -7,17 +7,17 @@ import {
 import { View, Image, StyleSheet, Button, TouchableOpacity, onPress } from 'react-native';
 
 const infoScreen = () => (
-  <View style = {{flex: 1, flexDirection:'column'}}>
+  <View style = {{flex: 1, flexDirection:'column', backgroundColor: 'white'}}>
       <View style={styles.title_container}>
           <Text style = {styles.baseText}>MEET THE DEVELOPERS</Text>
         </View>
 
-        <View style = {{flex: 10}}>
+        <View style = {{flex: 10, backgroundColor: 'white'}}>
 
           <View style = {[styles.container, styles.image_container]}>
             <Image
             style={styles.canvas}
-            source={require('../images/stephanie.jpg')}
+            source={require('../images/stephanie_rounded.png')}
             resizeMode="contain"
           />
           <Text style = {[styles.baseText, styles.imageText]}>Stephanie Zhang</Text>
@@ -26,7 +26,7 @@ const infoScreen = () => (
           <View style = {[styles.container, styles.image_container]}>
             <Image
             style={styles.canvas}
-            source={require('../images/justin.jpg')}
+            source={require('../images/justin_rounded.png')}
             resizeMode="contain"
           />
           <Text style = {[styles.baseText, styles.imageText]}>Justin Lin</Text>
@@ -35,7 +35,7 @@ const infoScreen = () => (
           <View style = {[styles.container, styles.image_container]}>
             <Image
             style={styles.canvas}
-            source={require('../images/raymond.jpg')}
+            source={require('../images/raymond_rounded.png')}
             resizeMode="contain"
           />
           <Text style = {[styles.baseText, styles.imageText]}>Raymond Deng</Text>
@@ -56,21 +56,25 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'flex-end',
     alignItems: 'center',
-    position: 'relative'
+    position: 'relative',
+    backgroundColor: 'white',
   },
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    position: 'relative'
+    position: 'relative',
+    backgroundColor: 'white',
   },
   image_container: {
-    flexDirection: 'row'
+    flexDirection: 'row',
+    backgroundColor: 'transparent'
   },
   canvas: {
     flex: 1,
     alignItems: 'stretch',
     marginLeft:45,
+    backgroundColor: 'transparent',
   },
   imageText: {
     flex: 1,
