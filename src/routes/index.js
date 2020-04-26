@@ -5,8 +5,10 @@ import DefaultProps from '../constants/navigation';
 import AppConfig from '../constants/config';
 
 import {ArticlesList, ArticlesSingle } from '../containers';
-
+import otherArticlesListContainer from '../containers/Articles/otherArticlesListContainer';
 import {infoScreen, testStartScreen, testResultsScreen, testAnalysisScreen } from '../components';
+
+
 
 const Index = (
   <Stack hideNavBar>
@@ -19,13 +21,12 @@ const Index = (
         {...DefaultProps.tabProps}
       >
         <Stack
-          key="articlesList"
-          title="Articles List"
+          key="otherArticlesListContainer"
+          title="Past Entries"
           icon={() => <Icon name="home" {...DefaultProps.icons} />}
           {...DefaultProps.navbarProps}
         >
-          <Scene key="articlesList" component={ArticlesList} />
-          <Scene key="articlesSingle" component={ArticlesSingle} />
+          <Scene key="otherArticlesListContainer" component={otherArticlesListContainer} />
         </Stack> 
 
         <Stack
