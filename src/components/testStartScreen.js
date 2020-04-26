@@ -1,12 +1,39 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {
   Container, Content, Text, H1, H2, H3
 } from 'native-base';
 import Spacer from './UI/Spacer';
-import { View, Image, StyleSheet, Button, TouchableOpacity, onPress } from 'react-native';
+import { View, Image, StyleSheet, Button, TouchableOpacity, onPress, Alert } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 
-const testStartScreen = () => (
+/*
+() => fetch('http://0.0.0.0:5000/', {
+          'method': 'GET',
+          'headers': {
+            Accept: 'appliation/json',
+            'Content-Type': 'application/json',
+          },
+        }).then(response => {
+          this.setState({
+            ml_response: 'response.text'
+          })
+        })
+
+*/
+
+
+class testStartScreen extends Component{
+
+  constructor(props){
+    super(props);
+
+    this.state ={
+      ml_response: ['hi']
+    }
+  }
+
+render() {
+  return(
   <View style = {{flex: 1, flexDirection:'column'}}>
       <View style={styles.container}>
           <Text style = {styles.baseText}>INSERT SWAB HERE</Text>
@@ -21,13 +48,16 @@ const testStartScreen = () => (
         <View style = {styles.container}>
         <TouchableOpacity
         style={[styles.baseText, styles.buttonText]}
-        onPress={() => Actions.testResultsScreen()}
+        onPress={() => {
+          Actions.testResultsScreen();
+        }}
       >
         <Text style={styles.baseText}>SEQUENCE</Text>
       </TouchableOpacity>
       </View>
   </View>
-);
+)};
+}
 
 const styles = StyleSheet.create({
   baseText:{

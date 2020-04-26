@@ -8,24 +8,26 @@ import { View, Image, StyleSheet, Button, TouchableOpacity, onPress } from 'reac
 
 const testAnalysisScreen = () => (
   <View style = {{flex: 1, flexDirection:'column'}}>
-      
-      <View style={[styles.container, styles.image_container]}>
-          <Image
-            style={styles.canvas}
-            source={require('../images/test_pos.png')}
-            resizeMode="contain"
-          />
-          <Text style = {[styles.baseText, styles.negResultText]}>COVID-19 POSITIVE</Text>
-        </View>
-        <View style = {[styles.container, styles.button_container]}>
-          <TouchableOpacity style={[styles.baseText, styles.buttonText]}>
-            <Text style={styles.baseText}>SAVE ENTRY</Text>
-          </TouchableOpacity>
-        
-          <TouchableOpacity style={[styles.baseText, styles.secondButtonText]}>
-            <Text style={[styles.baseText, styles.secondButtonBaseText]}>DISCARD ENTRY</Text>
-          </TouchableOpacity>
-         </View>
+      <View style={styles.title_container}>
+      <Image
+        style={styles.canvas}
+        source={require('../images/test_pos.png')}
+        resizeMode="contain"
+      />
+      </View>
+
+        <View style = {styles.container}>
+
+        <Text style={styles.posText}>COVID-19 POSIITVE</Text>
+
+        <TouchableOpacity style={[styles.baseText, styles.buttonText]}>
+          <Text style={[styles.baseText]}>SAVE ENTRY</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={[styles.baseText, styles.secondButtonText]}>
+          <Text style={[styles.baseText, styles.secondButtonTexxt]}>DISCARD ENTRY</Text>
+        </TouchableOpacity>
+      </View>
   </View>
 );
 
@@ -34,53 +36,62 @@ const styles = StyleSheet.create({
     fontFamily: 'Futura',
     color: 'gray',
     alignSelf: 'center',
+    fontSize: 20,
+  },
+  posText:{
+    fontFamily: 'Futura',
+    color: 'crimson',
+    alignSelf: 'center',
+    fontSize: 30,
+    marginBottom: 30,
+  },
+  titleText:{
+    fontFamily: 'Futura',
+    color: 'gray',
+    alignSelf: 'center',
     fontSize: 20
   },
-  image_container: {
-    paddingTop: 15,
-    justifyContent: 'center'
-  },
-  button_container: {
-    justifyContent: 'space-around'
-  },
-  container: {
-    flex: 2,
+  title_container: {
+    flex: 1,
+    marginTop: 17,
     justifyContent: 'center',
-    alignSelf: 'center',
+    alignItems: 'center',
     position: 'relative',
   },
-  negResultText: {
-    color: 'red'
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'relative',
   },
   canvas: {
     flex: 1,
-    alignItems: 'stretch'
+    alignItems: 'stretch',
   },
   buttonText: {
     paddingTop:15,
     paddingBottom:15,
-    paddingRight:45,
-    paddingLeft:45,
+    paddingRight:110,
+    paddingLeft:110,
     borderRadius:30,
     borderWidth: 1,
-    borderColor: 'gray'
+    borderColor: 'gray',
+    margin: 10
   },
   secondButtonText: {
     paddingTop:15,
     paddingBottom:15,
-    paddingRight:45,
-    paddingLeft:45,
+    paddingRight:92,
+    paddingLeft:92,
     borderRadius:30,
     borderWidth: 1,
     borderColor: 'gray',
-    backgroundColor: 'dimgray'
+    backgroundColor: 'darkgray',
+    margin: 10
   },
-  secondButtonBaseText:{
-    fontFamily: 'Futura',
-    color: 'white',
-    alignSelf: 'center',
-    fontSize: 20
-  },
+  secondButtonTexxt: {
+    color: 'white'
+  }
 
 })
 

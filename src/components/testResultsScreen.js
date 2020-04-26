@@ -8,10 +8,8 @@ import { Actions } from 'react-native-router-flux';
 
 const testResultsScreen = () => (
   <View style = {{flex: 1, flexDirection:'column'}}>
-      <View style={styles.container}>
-          <Text style = {styles.baseText}>RESULTS</Text>
-        </View>
-        <View style = {styles.container}>
+      <View style={styles.title_container}>
+          <Text style = {styles.baseText}>INDEXING SEQUEUNCE</Text>
       <Image
         style={styles.canvas}
         source={require('../images/result_example.png')}
@@ -19,12 +17,14 @@ const testResultsScreen = () => (
       />
       </View>
         <View style = {styles.container}>
-        <Text style = {styles.baseText}>ACTGCGATATAG...</Text>
+        <Text style={styles.baseText}>ACTGCACGTCGAC...</Text>
         <TouchableOpacity
-        style={[styles.baseText, styles.buttonText]}
-        onPress={() => Actions.testAnalysisScreen()}
+        style={[styles.baseText, styles.buttonText, styles.insideThing]}
+        onPress={() => {
+          Actions.testAnalysisScreen();
+        }}
       >
-        <Text style={styles.baseText}>ANALYZE</Text>
+        <Text style={[styles.baseText]}>ANALYZE</Text>
       </TouchableOpacity>
       </View>
   </View>
@@ -35,17 +35,35 @@ const styles = StyleSheet.create({
     fontFamily: 'Futura',
     color: 'gray',
     alignSelf: 'center',
+    fontSize: 20,
+  },
+  insideThing: {
+    margin: 30,
+    marginBottom: 125,
+  },
+  titleText:{
+    fontFamily: 'Futura',
+    color: 'gray',
+    alignSelf: 'center',
     fontSize: 20
+  },
+  title_container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'relative',
+    marginTop: 107,
   },
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    position: 'relative'
+    position: 'relative',
   },
   canvas: {
     flex: 1,
-    alignItems: 'stretch'
+    marginTop: 30,
+    alignItems: 'stretch',
   },
   buttonText: {
     paddingTop:15,
