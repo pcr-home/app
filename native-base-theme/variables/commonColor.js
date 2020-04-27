@@ -130,7 +130,7 @@ export default {
   checkboxTickColor: '#fff',
 
   // Color
-  brandPrimary: platform === PLATFORM.IOS ? '#007aff' : '#3F51B5',
+  brandPrimary: platform === PLATFORM.IOS ? 'white' : '#3F51B5',
   brandInfo: '#62B1F6',
   brandSuccess: '#5cb85c',
   brandDanger: '#d9534f',
@@ -176,14 +176,14 @@ export default {
   tabActiveBgColor: platform === PLATFORM.IOS ? '#cde1f9' : '#3F51B5',
 
   // Header
-  toolbarBtnColor: platform === PLATFORM.IOS ? '#007aff' : '#fff',
+  toolbarBtnColor: platform === PLATFORM.IOS ? '#fff' : '#fff',
   toolbarDefaultBg: platform === PLATFORM.IOS ? '#F8F8F8' : '#3F51B5',
   toolbarHeight: platform === PLATFORM.IOS ? 64 : 56,
   toolbarSearchIconSize: platform === PLATFORM.IOS ? 20 : 23,
   toolbarInputColor: platform === PLATFORM.IOS ? '#CECDD2' : '#fff',
   searchBarHeight: platform === PLATFORM.IOS ? 30 : 40,
   searchBarInputHeight: platform === PLATFORM.IOS ? 30 : 50,
-  toolbarBtnTextColor: platform === PLATFORM.IOS ? '#007aff' : '#fff',
+  toolbarBtnTextColor: platform === PLATFORM.IOS ? '#fff' : '#fff',
   iosStatusbar: 'dark-content',
   toolbarDefaultBorder: platform === PLATFORM.IOS ? '#a7a6ab' : '#3F51B5',
   get statusBarColor() {

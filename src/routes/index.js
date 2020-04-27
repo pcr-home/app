@@ -4,9 +4,11 @@ import { Icon } from 'native-base';
 import DefaultProps from '../constants/navigation';
 import AppConfig from '../constants/config';
 
-import { ArticlesForm, ArticlesList, ArticlesSingle } from '../containers';
+import {ArticlesList, ArticlesSingle } from '../containers';
+import otherArticlesListContainer from '../containers/Articles/otherArticlesListContainer';
+import {infoScreen, testStartScreen, testResultsScreen, testAnalysisScreen } from '../components';
 
-import AboutComponent from '../components/About';
+
 
 const Index = (
   <Stack hideNavBar>
@@ -19,31 +21,30 @@ const Index = (
         {...DefaultProps.tabProps}
       >
         <Stack
-          key="articlesList"
-          title="Articles List"
-          icon={() => <Icon name="list" {...DefaultProps.icons} />}
+          key="otherArticlesListContainer"
+          title="Past Entries"
+          icon={() => <Icon name="home" {...DefaultProps.icons} />}
           {...DefaultProps.navbarProps}
         >
-          <Scene key="articlesList" component={ArticlesList} />
-          <Scene key="articlesSingle" component={ArticlesSingle} />
-        </Stack>
+          <Scene key="otherArticlesListContainer" component={otherArticlesListContainer} />
+        </Stack> 
 
         <Stack
           key="home"
-          title={AppConfig.appName}
-          icon={() => <Icon name="planet" {...DefaultProps.icons} />}
+          icon={() => <Icon name="ios-add-circle-outline" {...DefaultProps.middle_icon} />}
           {...DefaultProps.navbarProps}
         >
-          <Scene key="home" component={AboutComponent} />
+          <Scene key="testStartScreen" component={testStartScreen} />
+          <Scene key="testResultsScreen" component={testResultsScreen} />
+          <Scene key="testAnalysisScreen" component={testAnalysisScreen} />
         </Stack>
 
         <Stack
-          key="form"
-          title="Articles Form"
-          icon={() => <Icon name="contact" {...DefaultProps.icons} />}
+          key="infoScreen"
+          icon={() => <Icon name="information-circle-outline" {...DefaultProps.icons} />}
           {...DefaultProps.navbarProps}
         >
-          <Scene key="form" component={ArticlesForm} />
+          <Scene key="infoScreen" component={infoScreen} />
         </Stack>
       </Tabs>
     </Scene>

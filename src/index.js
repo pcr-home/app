@@ -12,6 +12,8 @@ import theme from '../native-base-theme/variables/commonColor';
 import Routes from './routes/index';
 import Loading from './components/UI/Loading';
 
+
+
 class App extends React.Component {
   constructor() {
     super();

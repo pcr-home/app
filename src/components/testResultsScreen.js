@@ -4,29 +4,28 @@ import {
 } from 'native-base';
 import Spacer from './UI/Spacer';
 import { View, Image, StyleSheet, Button, TouchableOpacity, onPress } from 'react-native';
+import { Actions } from 'react-native-router-flux';
 
-
-const testAnalysisScreen = () => (
+const testResultsScreen = () => (
   <View style = {{flex: 1, flexDirection:'column'}}>
       <View style={styles.title_container}>
+          <Text style = {styles.baseText}>INDEXING SEQUEUNCE</Text>
       <Image
         style={styles.canvas}
-        source={require('../images/test_pos.png')}
+        source={require('../images/result_example.png')}
         resizeMode="contain"
       />
       </View>
-
         <View style = {styles.container}>
-
-        <Text style={styles.posText}>COVID-19 POSIITVE</Text>
-
-        <TouchableOpacity style={[styles.baseText, styles.buttonText]}>
-          <Text style={[styles.baseText]}>SAVE ENTRY</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={[styles.baseText, styles.secondButtonText]}>
-          <Text style={[styles.baseText, styles.secondButtonTexxt]}>DISCARD ENTRY</Text>
-        </TouchableOpacity>
+        <Text style={styles.baseText}>ACTGCACGTCGAC...</Text>
+        <TouchableOpacity
+        style={[styles.baseText, styles.buttonText, styles.insideThing]}
+        onPress={() => {
+          Actions.testAnalysisScreen();
+        }}
+      >
+        <Text style={[styles.baseText]}>ANALYZE</Text>
+      </TouchableOpacity>
       </View>
   </View>
 );
@@ -38,12 +37,9 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     fontSize: 20,
   },
-  posText:{
-    fontFamily: 'Futura',
-    color: 'crimson',
-    alignSelf: 'center',
-    fontSize: 30,
-    marginBottom: 30,
+  insideThing: {
+    margin: 30,
+    marginBottom: 125,
   },
   titleText:{
     fontFamily: 'Futura',
@@ -53,10 +49,10 @@ const styles = StyleSheet.create({
   },
   title_container: {
     flex: 1,
-    marginTop: 17,
     justifyContent: 'center',
     alignItems: 'center',
     position: 'relative',
+    marginTop: 107,
   },
   container: {
     flex: 1,
@@ -66,33 +62,19 @@ const styles = StyleSheet.create({
   },
   canvas: {
     flex: 1,
+    marginTop: 30,
     alignItems: 'stretch',
   },
   buttonText: {
     paddingTop:15,
     paddingBottom:15,
-    paddingRight:110,
-    paddingLeft:110,
+    paddingRight:45,
+    paddingLeft:45,
     borderRadius:30,
     borderWidth: 1,
-    borderColor: 'gray',
-    margin: 10
-  },
-  secondButtonText: {
-    paddingTop:15,
-    paddingBottom:15,
-    paddingRight:92,
-    paddingLeft:92,
-    borderRadius:30,
-    borderWidth: 1,
-    borderColor: 'gray',
-    backgroundColor: 'darkgray',
-    margin: 10
-  },
-  secondButtonTexxt: {
-    color: 'white'
+    borderColor: 'gray'
   }
 
 })
 
-export default testAnalysisScreen;
+export default testResultsScreen;
