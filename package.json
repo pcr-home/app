@@ -17,7 +17,7 @@
     "@tensorflow/tfjs": "^1.7.3",
     "axios": "^0.19.2",
     "firebase": "^7.14.2",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "moment": "^2.24.0",
     "native-base": "^2.13.8",
     "prop-types": "^15.7.2",
